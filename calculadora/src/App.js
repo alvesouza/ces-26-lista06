@@ -9,8 +9,9 @@ class Calculator extends React.Component{
       this.calculate = this.calculate.bind(this)
   }
   calculate(){
-      var expression = this.state.expression.replace("X", "*");
+      var expression = this.state.expression.replaceAll("X", "*");
       try {
+          console.log(expression)
           var x = eval(expression);
           this.setState({expression: x.toString()})
       }catch (e) {
